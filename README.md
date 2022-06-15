@@ -13,7 +13,9 @@ Herhangi bir api yi kullanmak serbest
 
 # Crypto Market
 
-In this task, I have used https://api.coingecko.com/api/v3/coins to get our data.
+- In this task, I have used https://api.coingecko.com/api/v3/coins to get our data.
+- VIPER pattern is used.
+- KingFisher 3rd party library is used for logo.
 
 ## Preview For Iphone 12 Mini
 <img src="gif.gif" alt="My Project GIF" width="300">
