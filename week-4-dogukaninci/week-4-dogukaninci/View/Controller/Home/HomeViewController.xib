@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,14 +20,19 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="f3h-VH-Qe8">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="qBz-lh-y1M">
+                    <rect key="frame" x="0.0" y="74.333333333333314" width="390" height="769.66666666666674"/>
+                </imageView>
+                <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="f3h-VH-Qe8">
                     <rect key="frame" x="0.0" y="125.33333333333331" width="390" height="684.66666666666674"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="scrollIndicatorInsets" minX="0.0" minY="2" maxX="0.0" maxY="2"/>
+                    <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coin Market" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Li3-j0-O1c">
                     <rect key="frame" x="0.0" y="44" width="390" height="30.333333333333329"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" red="0.2274509804" green="0.42745098040000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Hrg-Y5-Re9">
@@ -37,25 +41,27 @@
                 </searchBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="qBz-lh-y1M" firstAttribute="top" secondItem="Hrg-Y5-Re9" secondAttribute="top" id="1R2-hu-V6D"/>
                 <constraint firstItem="Hrg-Y5-Re9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7Vn-92-ktT"/>
                 <constraint firstItem="Hrg-Y5-Re9" firstAttribute="top" secondItem="Li3-j0-O1c" secondAttribute="bottom" id="HEf-go-UBj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="f3h-VH-Qe8" secondAttribute="bottom" id="HJx-aJ-PAt"/>
+                <constraint firstItem="qBz-lh-y1M" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="IjU-4v-CF1"/>
+                <constraint firstAttribute="bottom" secondItem="qBz-lh-y1M" secondAttribute="bottom" id="KzW-b1-egM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Li3-j0-O1c" secondAttribute="trailing" id="KzX-CD-5cS"/>
                 <constraint firstItem="Li3-j0-O1c" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TH6-Sh-kLj"/>
                 <constraint firstItem="Li3-j0-O1c" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="Vqk-gb-fCv"/>
                 <constraint firstItem="Hrg-Y5-Re9" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="YlP-8E-B3O"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f3h-VH-Qe8" secondAttribute="trailing" id="bJ3-NI-FNy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qBz-lh-y1M" secondAttribute="trailing" id="hn3-QE-6Dv"/>
                 <constraint firstItem="f3h-VH-Qe8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kqO-H0-by7"/>
                 <constraint firstItem="f3h-VH-Qe8" firstAttribute="top" secondItem="Hrg-Y5-Re9" secondAttribute="bottom" id="pzM-o1-25E"/>
             </constraints>
-            <point key="canvasLocation" x="131" y="-11"/>
+            <point key="canvasLocation" x="130.76923076923077" y="-11.374407582938389"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="background" width="612" height="408"/>
     </resources>
 </document>

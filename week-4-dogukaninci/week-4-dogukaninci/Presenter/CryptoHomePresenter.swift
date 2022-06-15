@@ -16,23 +16,32 @@ class CryptoHomePresenter: CryptoHome.Presenter {
     
     var router: CryptoHome.Router!
     
+    /// Fetch data using interactor layer
     func viewDidLoad() {
         interactor.fetchData()
     }
     
+    /// Reload table view
     func didDataFetch() {
         guard let data = interactor.data else { return }
         filteredData = data
         view?.reloadView()
     }
+    /// Get Crypto array count
+    /// - Returns: Int
     func getCryptoListCount() -> Int? {
         return filteredData?.count
     }
     
+    /// Return specific item using indexPath
+    /// - Parameter indexPath: <#indexPath description#>
+    /// - Returns: <#description#>
     func getCryptoListItem(indexPath: Int) -> Crypto? {
         return filteredData?[indexPath]
     }
     
+    /// Make filter to Crypto array,using search bar text
+    /// - Parameter searchText: <#searchText description#>
     func getFilteredCryptoList(searchText: String) {
         guard let data = interactor.data else { return }
         if(searchText == "") {

@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 extension CryptoHome {
+    
+    /// Dependency Injection
+    /// - Returns: UIViewController
     static func createModule() -> UIViewController? {
         let view = HomeViewController()
         let presenter = CryptoHomePresenter()

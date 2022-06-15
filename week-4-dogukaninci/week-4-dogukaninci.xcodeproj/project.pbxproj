@@ -147,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				1E7232022858683F00CF719F /* Home */,
-				1E7232032858685100CF719F /* Detail */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -159,13 +158,6 @@
 				1E5F84BF28572E8200894C28 /* HomeViewController.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		1E7232032858685100CF719F /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Detail;
 			sourceTree = "<group>";
 		};
 		1E7232042858687F00CF719F /* Helper */ = {
@@ -197,7 +189,6 @@
 				63BB865CDBEC933E5AD4CBB2 /* Pods-week-4-dogukaninci.debug.xcconfig */,
 				5631563AC87B6B74C4D222D2 /* Pods-week-4-dogukaninci.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

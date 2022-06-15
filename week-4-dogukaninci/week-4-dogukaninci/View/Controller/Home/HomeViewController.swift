@@ -19,6 +19,7 @@ class HomeViewController: UIViewController, CryptoHome.View {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /// Delegation
         cryptoTableView.delegate = self
         cryptoTableView.dataSource = self
         searchBar.delegate = self
@@ -28,6 +29,8 @@ class HomeViewController: UIViewController, CryptoHome.View {
         presenter?.viewDidLoad()
         
     }
+    
+    /// Reload Table View
     func reloadView() {
         cryptoTableView.reloadData()
     }
@@ -47,20 +50,27 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.currencyLabel.text = "$\(presenter?.getCryptoListItem(indexPath: indexPath.row)?.current_price! ?? 0)"
         cell.logoImageView.kf.setImage(with: URL(string: presenter?.getCryptoListItem(indexPath: indexPath.row)?.image ?? ""))
         cell.changePercentageLabel.textColor = isPercentageUpper(price: presenter?.getCryptoListItem(indexPath: indexPath.row)?.price_change_percentage_24h ?? 0)
-        cell.changePercentageLabel.text = "%" + (presenter?.getCryptoListItem(indexPath: indexPath.row)?.price_change_percentage_24h?.description ?? "")
-        cell.layer.cornerRadius = 30
-        cell.clipsToBounds = true
+        cell.changePercentageLabel.text = "% " + (presenter?.getCryptoListItem(indexPath: indexPath.row)?.price_change_percentage_24h?.description ?? "")
+        cell.backgroundColor = UIColor.white.withAlphaComponent(0.8)
         return cell
     }
 }
 extension HomeViewController: UISearchBarDelegate {
+    
+    /// TextDidChange
+    /// - Parameters:
+    ///   - searchBar: UISearchBar
+    ///   - searchText: String
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-
         presenter?.getFilteredCryptoList(searchText: searchText)
         reloadView()
     }
 }
 extension HomeViewController {
+    
+    /// If price was increase return green, if price was decrease return red color
+    /// - Parameter price: price_change_percentage_24h
+    /// - Returns: UIColor
     func isPercentageUpper(price: Double) -> UIColor {
         if(price < 0) {
             return .red

@@ -20,12 +20,20 @@ protocol CryptoHomePresenterProtocol: AnyObject {
     
     func viewDidLoad()
     
+    /// Informs that the fetching data is over
     func didDataFetch()
     
+    /// Get Crypto array count
+    /// - Returns: Int
     func getCryptoListCount() -> Int?
     
+    /// Get spesific item for table view cell
+    /// - Parameter indexPath: table view indexPath.row
+    /// - Returns: Spesific Crypto model
     func getCryptoListItem(indexPath: Int) -> Crypto?
     
+    /// Filtering Crypto data list by search bar
+    /// - Parameter searchText: Search Bar Text
     func getFilteredCryptoList(searchText: String)
 }
 
@@ -34,6 +42,7 @@ protocol CryptoHomeInteractorProtocol: AnyObject {
     
     var data: [Crypto]? { get }
     
+    /// Fething data
     func fetchData()
 }
 
