@@ -30,9 +30,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMv-bd-XUx">
-                        <rect key="frame" x="504" y="18.666666666666668" width="43" height="23.000000000000004"/>
+                        <rect key="frame" x="504" y="10" width="43" height="23"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
-                        <color key="textColor" red="0.3294117647" green="0.56470588239999997" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUg-ph-Vnk">
@@ -41,21 +41,30 @@
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxL-V5-TuP">
+                        <rect key="frame" x="515.33333333333337" y="33" width="31.666666666666629" height="17"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="awh-Et-MfU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="2bE-Rc-Ozr"/>
                     <constraint firstItem="Uje-O4-XFo" firstAttribute="leading" secondItem="awh-Et-MfU" secondAttribute="trailing" constant="20" id="K5y-Jk-BQZ"/>
+                    <constraint firstAttribute="bottom" secondItem="NxL-V5-TuP" secondAttribute="bottom" constant="10" id="P2X-40-DvU"/>
                     <constraint firstAttribute="bottom" secondItem="awh-Et-MfU" secondAttribute="bottom" constant="10" id="QJj-83-PMX"/>
                     <constraint firstItem="awh-Et-MfU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Qlh-nQ-vdc"/>
-                    <constraint firstItem="MMv-bd-XUx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UfX-f3-sPz"/>
                     <constraint firstAttribute="trailing" secondItem="MMv-bd-XUx" secondAttribute="trailing" constant="10" id="bYe-Vb-Bjr"/>
                     <constraint firstAttribute="bottom" secondItem="XUg-ph-Vnk" secondAttribute="bottom" constant="10" id="lSl-2F-5dB"/>
+                    <constraint firstAttribute="trailing" secondItem="NxL-V5-TuP" secondAttribute="trailing" constant="10" id="pLe-hG-Ku6"/>
                     <constraint firstItem="XUg-ph-Vnk" firstAttribute="leading" secondItem="awh-Et-MfU" secondAttribute="trailing" constant="20" id="rTJ-QC-OWv"/>
+                    <constraint firstItem="MMv-bd-XUx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="uUf-YF-Tft"/>
                     <constraint firstItem="Uje-O4-XFo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="weI-Bf-OCa"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="changePercentageLabel" destination="NxL-V5-TuP" id="YT3-cq-sgg"/>
                 <outlet property="cryptoNameLabel" destination="Uje-O4-XFo" id="882-dS-fSe"/>
                 <outlet property="cryptoSymbol" destination="XUg-ph-Vnk" id="CMZ-kU-YcK"/>
                 <outlet property="currencyLabel" destination="MMv-bd-XUx" id="usb-RO-El2"/>

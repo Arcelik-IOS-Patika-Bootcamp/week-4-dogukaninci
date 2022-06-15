@@ -11,6 +11,7 @@ struct Crypto: Decodable {
     let name: String?
     let image: String?
     let current_price: Double?
+    let price_change_percentage_24h: Double?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -18,5 +19,6 @@ struct Crypto: Decodable {
         case name
         case image
         case current_price
+        case price_change_percentage_24h
     }
 }

@@ -13,6 +13,7 @@ class CryptoHomeTableViewCell: UITableViewCell {
     @IBOutlet var cryptoSymbol: UILabel!
     @IBOutlet var logoImageView: UIImageView!
     @IBOutlet var cryptoNameLabel: UILabel!
+    @IBOutlet weak var changePercentageLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

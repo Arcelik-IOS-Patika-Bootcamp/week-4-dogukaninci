@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Kingfisher
+
 
 class HomeViewController: UIViewController, CryptoHome.View {
     
@@ -43,25 +45,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.cryptoNameLabel.text = presenter?.getCryptoListItem(indexPath: indexPath.row)?.name
         cell.cryptoSymbol.text = presenter?.getCryptoListItem(indexPath: indexPath.row)?.symbol?.uppercased()
         cell.currencyLabel.text = "$\(presenter?.getCryptoListItem(indexPath: indexPath.row)?.current_price! ?? 0)"
-        cell.logoImageView.loadFrom(URLAddress: presenter?.getCryptoListItem(indexPath: indexPath.row)?.image ?? "")
+        cell.logoImageView.kf.setImage(with: URL(string: presenter?.getCryptoListItem(indexPath: indexPath.row)?.image ?? ""))
+        cell.changePercentageLabel.textColor = isPercentageUpper(price: presenter?.getCryptoListItem(indexPath: indexPath.row)?.price_change_percentage_24h ?? 0)
+        cell.changePercentageLabel.text = "%" + (presenter?.getCryptoListItem(indexPath: indexPath.row)?.price_change_percentage_24h?.description ?? "")
         cell.layer.cornerRadius = 30
         cell.clipsToBounds = true
         return cell
-    }
-}
-extension UIImageView {
-    func loadFrom(URLAddress: String) {
-        guard let url = URL(string: URLAddress) else {
-            return
-        }
-        
-        DispatchQueue.main.async { [weak self] in
-            if let imageData = try? Data(contentsOf: url) {
-                if let loadedImage = UIImage(data: imageData) {
-                    self?.image = loadedImage
-                }
-            }
-        }
     }
 }
 extension HomeViewController: UISearchBarDelegate {
@@ -69,5 +58,15 @@ extension HomeViewController: UISearchBarDelegate {
 
         presenter?.getFilteredCryptoList(searchText: searchText)
         reloadView()
+    }
+}
+extension HomeViewController {
+    func isPercentageUpper(price: Double) -> UIColor {
+        if(price < 0) {
+            return .red
+        } else {
+            return .systemGreen
+        }
+        
     }
 }
