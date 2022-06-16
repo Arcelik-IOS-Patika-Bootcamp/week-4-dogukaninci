@@ -17,5 +17,5 @@ Herhangi bir api yi kullanmak serbest
 - VIPER pattern is used.
 - KingFisher 3rd party library is used for logo.
 
-## Preview For Iphone 12 Mini
+## Preview For Iphone 12 Mini (wait a while for it to load)
 <img src="gif.gif" alt="My Project GIF" width="300">
